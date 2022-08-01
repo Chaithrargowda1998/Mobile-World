@@ -1,0 +1,27 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Signup
+{
+	public static void main(String[] args)
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\chaithra.r\\Desktop\\CD\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://mobileworld.azurewebsites.net/signup.html");
+		System.out.println(driver.getTitle());
+		System.out.println(driver.getCurrentUrl());
+		driver.findElement(By.id("myName")).sendKeys("Chaithra");
+		driver.findElement(By.cssSelector("[placeholder='Last Name']")).sendKeys("Gowda");
+		driver.findElement(By.cssSelector("[placeholder='Enter Email']")).sendKeys("xyz@gmail.com");
+		driver.findElement(By.cssSelector("[placeholder='Password']")).sendKeys("12@Cha");
+		driver.findElement(By.cssSelector("[type='date']")).sendKeys("03/07/2022");
+		driver.findElement(By.xpath("/html/body/div/div[2]/from/div[3]/div[4]/input")).click();
+		driver.findElement(By.cssSelector("[placeholder='91XXXXXXXXXX']")).sendKeys("4567898765");
+		driver.findElement(By.cssSelector("[placeholder='Short Bio']")).sendKeys("Hi, My name is Chaithra R");
+		driver.findElement(By.xpath("//button[contains(@type,'Subm')]")).click();
+		//driver.close();
+		//driver.quit();
+	}
+
+}
